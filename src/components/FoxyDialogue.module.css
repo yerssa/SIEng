@@ -1,0 +1,61 @@
+.bubble {
+  position: relative;
+  background: white;
+  border-radius: 20px 20px 20px 4px;
+  padding: 14px 18px 28px;
+  box-shadow: 0 4px 16px rgba(16,32,61,0.12);
+  cursor: pointer;
+  text-align: left;
+  border: 2px solid var(--warm-ivory);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  width: 100%;
+  min-height: 44px;
+}
+
+.bubble:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(16,32,61,0.16);
+}
+
+.bubble:active {
+  transform: scale(0.99);
+}
+
+.text {
+  font-size: var(--text-md);
+  color: var(--deep-midnight);
+  font-weight: var(--font-semibold);
+  line-height: 1.5;
+  min-height: 1.5em;
+}
+
+.tap {
+  position: absolute;
+  bottom: 8px;
+  right: 14px;
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dots {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  bottom: 8px;
+  left: 14px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray-300);
+  transition: background 200ms ease;
+}
+
+.dotActive {
+  background: var(--fox-orange);
+}

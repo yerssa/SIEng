@@ -1,0 +1,159 @@
+.screen {
+  min-height: 100dvh;
+  background: var(--warm-ivory);
+}
+
+.header {
+  padding: 20px 20px 16px;
+  border-bottom: 2px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  cursor: pointer;
+  padding: 4px 0;
+  align-self: flex-start;
+  min-height: 44px;
+}
+
+.worldTitle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.worldEmoji {
+  font-size: 36px;
+}
+
+.worldName {
+  font-size: var(--text-2xl);
+  font-family: var(--font-display);
+  color: var(--deep-midnight);
+}
+
+.worldDesc {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.worldStats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.statBadge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border: 1.5px solid;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+}
+
+.missions {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.missionsTitle {
+  font-size: var(--text-base);
+  font-weight: var(--font-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--deep-midnight);
+  font-family: var(--font-main);
+}
+
+.missionCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--gray-200);
+}
+
+.bossCard {
+  border-color: var(--electric-cyan);
+  background: linear-gradient(135deg, rgba(57,216,242,0.08), white);
+}
+
+.missionLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.missionNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--gray-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  flex-shrink: 0;
+}
+
+.missionNumDone {
+  color: white;
+}
+
+.missionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.missionName {
+  font-size: var(--text-base);
+  font-weight: var(--font-extrabold);
+  color: var(--deep-midnight);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.missionDesc {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.completeBanner {
+  margin: 0 20px;
+  padding: 16px;
+  background: rgba(61,190,122,0.1);
+  border: 2px solid rgba(61,190,122,0.3);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  font-weight: var(--font-bold);
+  color: #2a9456;
+  font-size: var(--text-base);
+}

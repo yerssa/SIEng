@@ -1,0 +1,147 @@
+.screen {
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #10203D 30%, var(--warm-ivory) 100%);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+}
+
+.celebHeader {
+  background: linear-gradient(135deg, #10203D, #1E3A6E);
+  padding: 32px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: var(--text-3xl);
+  color: white;
+  font-family: var(--font-display);
+  text-align: center;
+}
+
+.missionName {
+  color: rgba(255,255,255,0.7);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+}
+
+.starsWrap {
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 4px;
+  border-right: 1px solid var(--gray-200);
+}
+
+.stat:last-child { border-right: none; }
+
+.statValue {
+  font-size: var(--text-xl);
+  font-weight: var(--font-extrabold);
+  font-family: var(--font-display);
+  color: var(--deep-midnight);
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--gray-500);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.firstClear {
+  margin: 16px 20px 0;
+  background: rgba(200,244,91,0.2);
+  border: 2px solid rgba(200,244,91,0.5);
+  border-radius: var(--radius-xl);
+  padding: 12px 16px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: #5a7a00;
+  text-align: center;
+}
+
+.section {
+  padding: 0 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--deep-midnight);
+  font-family: var(--font-main);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: white;
+  border: 2px solid var(--electric-cyan);
+  border-radius: var(--radius-full);
+  padding: 4px 14px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: #007a9a;
+}
+
+.achCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid rgba(255,215,0,0.3);
+}
+
+.foxyMessage {
+  margin: 20px 20px 0;
+  background: white;
+  border-radius: 16px 16px 16px 4px;
+  padding: 16px 18px;
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--deep-midnight);
+  font-weight: var(--font-semibold);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.5;
+}
+
+.actions {
+  padding: 0 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

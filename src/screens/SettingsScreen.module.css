@@ -1,0 +1,136 @@
+.screen {
+  min-height: 100dvh;
+  background: var(--warm-ivory);
+}
+
+.header {
+  background: linear-gradient(135deg, #10203D, #1E3A6E);
+  padding: 24px 20px;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  color: white;
+  font-family: var(--font-display);
+}
+
+.content {
+  padding: 0 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  font-weight: var(--font-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--deep-midnight);
+  font-family: var(--font-main);
+}
+
+.toggleRow {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--gray-200);
+}
+
+.toggleInfo {
+  flex: 1;
+}
+
+.toggleLabel {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--deep-midnight);
+  cursor: pointer;
+  display: block;
+}
+
+.toggleDesc {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.toggle {
+  width: 48px;
+  height: 28px;
+  background: var(--gray-300);
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 200ms ease;
+  padding: 0;
+  min-height: unset;
+}
+
+.toggleOn {
+  background: var(--fox-orange);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 11px;
+  transition: transform 200ms ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.toggleOn .toggleThumb {
+  transform: translateX(20px);
+}
+
+.privacyCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.aboutCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.resetHint {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  text-align: center;
+}
