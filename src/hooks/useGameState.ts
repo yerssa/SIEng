@@ -186,20 +186,34 @@ function reducer(state: GameState, action: Action): GameState {
         ...unlockedWorlds.filter((w) => w.missions.some((m) => m.completed)).map((w) => w.id),
       ]);
 
+      const updatedPlayer = {
+        ...state.player,
+        xp: newXP,
+        coins: newCoins,
+        level: newLevel,
+        totalMissionsCompleted: state.player.totalMissionsCompleted + skillInc,
+        totalWordsLearned: state.player.totalWordsLearned + result.wordsLearned.length,
+        totalGrammarChallenges: state.player.totalGrammarChallenges + isGrammar,
+        totalListeningActivities: state.player.totalListeningActivities + isListening,
+        totalWorldsExplored: worldsSet.size,
+      };
+
+      // Check achievements against the fully updated state so counters are correct
+      const updatedStateForAch = {
+        ...state,
+        player: updatedPlayer,
+        worlds: unlockedWorlds,
+      };
+      const newlyUnlocked = checkAchievements(updatedStateForAch);
+      const updatedAchievements = state.achievements.map((a) =>
+        newlyUnlocked.includes(a.id) ? { ...a, unlocked: true, unlockedAt: Date.now() } : a,
+      );
+
       return {
         ...state,
-        player: {
-          ...state.player,
-          xp: newXP,
-          coins: newCoins,
-          level: newLevel,
-          totalMissionsCompleted: state.player.totalMissionsCompleted + skillInc,
-          totalWordsLearned: state.player.totalWordsLearned + result.wordsLearned.length,
-          totalGrammarChallenges: state.player.totalGrammarChallenges + isGrammar,
-          totalListeningActivities: state.player.totalListeningActivities + isListening,
-          totalWorldsExplored: worldsSet.size,
-        },
+        player: updatedPlayer,
         worlds: unlockedWorlds,
+        achievements: updatedAchievements,
       };
     }
 
@@ -288,11 +302,7 @@ export function useGameState() {
 
   const completeMission = (result: MissionResult, worldId: string) => {
     dispatch({ type: 'COMPLETE_MISSION', result, worldId });
-    // Check and unlock achievements after
-    const updatedState = { ...state } as GameState;
-    checkAchievements(updatedState).forEach((id) => {
-      dispatch({ type: 'UNLOCK_ACHIEVEMENT', id });
-    });
+    // Achievement check happens inside COMPLETE_MISSION reducer with the updated state
   };
 
   const completeBoss = (missionId: string) => {

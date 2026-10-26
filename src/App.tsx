@@ -16,11 +16,10 @@ import LeaderboardScreen from './screens/LeaderboardScreen';
 import ProgressScreen from './screens/ProgressScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import type { MissionResult, Screen } from './types';
-import { checkAchievements } from './game/achievements';
 
 export default function App() {
   const game = useGameState();
-  const { state, navigate, setPlayer, setPlacementLevel, completeMission, completeBoss, unlockAchievement, updateSettings, resetGame } = game;
+  const { state, navigate, setPlayer, setPlacementLevel, completeMission, completeBoss, updateSettings, resetGame } = game;
   const [missionResult, setMissionResult] = useState<MissionResult | null>(null);
 
   const hasSave = state.player.nickname !== '';
@@ -32,9 +31,6 @@ export default function App() {
   const handleMissionComplete = (result: MissionResult, worldId: string) => {
     setMissionResult(result);
     completeMission(result, worldId);
-    // Check achievements after state update
-    const newAchs = checkAchievements(state);
-    newAchs.forEach((id) => unlockAchievement(id));
     navigate('missionResults');
   };
 
