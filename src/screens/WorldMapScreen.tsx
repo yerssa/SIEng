@@ -9,11 +9,11 @@ interface Props {
 const WORLDS_META = [
   { id: 'world-1', name: 'Wordwood Forest', emoji: '🌲', color: '#3DBE7A', bg: '#E8F8EE', desc: 'Vocabulary & Spelling', unlockReq: 0 },
   { id: 'world-2', name: 'Grammar Galaxy', emoji: '🪐', color: '#B8A4FF', bg: '#F0ECFF', desc: 'Grammar & Sentences', unlockReq: 3 },
-  { id: 'world-3', name: 'Listening Lagoon', emoji: '🌊', color: '#39D8F2', bg: '#E5FAFE', desc: 'Listening Skills', unlockReq: 6 },
-  { id: 'world-4', name: 'Speaking Summit', emoji: '⛰️', color: '#FF852F', bg: '#FFF2E8', desc: 'Speaking Practice', unlockReq: 10 },
-  { id: 'world-5', name: 'Reading Ruins', emoji: '📜', color: '#FFD700', bg: '#FFFBE6', desc: 'Reading Comprehension', unlockReq: 14 },
-  { id: 'world-6', name: 'Battle of Wits', emoji: '⚔️', color: '#FF6B6B', bg: '#FFEDED', desc: 'Mixed Challenges', unlockReq: 18 },
-  { id: 'world-7', name: 'Crystal Castle', emoji: '💎', color: '#39D8F2', bg: '#E5FAFE', desc: 'Boss Challenge', unlockReq: 22 },
+  { id: 'world-3', name: 'Listening Lagoon', emoji: '🌊', color: '#39D8F2', bg: '#E5FAFE', desc: 'Listening Skills', unlockReq: 5 },
+  { id: 'world-4', name: 'Speaking Summit', emoji: '⛰️', color: '#FF852F', bg: '#FFF2E8', desc: 'Speaking Practice', unlockReq: 7 },
+  { id: 'world-5', name: 'Reading Ruins', emoji: '📜', color: '#FFD700', bg: '#FFFBE6', desc: 'Reading Comprehension', unlockReq: 9 },
+  { id: 'world-6', name: 'Battle of Wits', emoji: '⚔️', color: '#FF6B6B', bg: '#FFEDED', desc: 'Mixed Challenges', unlockReq: 11 },
+  { id: 'world-7', name: 'Crystal Castle', emoji: '💎', color: '#39D8F2', bg: '#E5FAFE', desc: 'Boss Challenge', unlockReq: 13 },
 ];
 
 export default function WorldMapScreen({ state, onNavigate }: Props) {

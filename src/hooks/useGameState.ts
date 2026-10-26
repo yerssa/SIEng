@@ -72,11 +72,24 @@ function loadState(): GameState {
         }),
       };
     });
+
+    // Re-evaluate world unlock status based on current thresholds.
+    // This ensures that if thresholds were lowered (e.g. after a patch), previously
+    // locked worlds become available without requiring a full save reset.
+    const totalCompleted = mergedWorlds.reduce(
+      (sum, w) => sum + w.missions.filter((m) => m.completed).length,
+      0,
+    );
+    const revalidatedWorlds = mergedWorlds.map((world) => {
+      const req = WORLD_UNLOCK_REQUIREMENTS[world.id] ?? 0;
+      return { ...world, unlocked: totalCompleted >= req };
+    });
+
     return {
       ...defaultState(),
       ...loaded,
       achievements: merged,
-      worlds: mergedWorlds,
+      worlds: revalidatedWorlds,
     };
   } catch {
     return defaultState();

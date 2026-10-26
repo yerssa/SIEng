@@ -59,12 +59,13 @@ export function getXPProgress(xp: number): { current: number; nextLevelXP: numbe
 }
 
 // World unlock requirements: number of missions completed
+// Total missions in game: world-1(4) + world-2(3) + world-3(2) + world-4(2) + world-5(2) + world-6(1) + world-7(1) = 15
 export const WORLD_UNLOCK_REQUIREMENTS: Record<string, number> = {
-  'world-1': 0,     // Always unlocked
-  'world-2': 3,     // 3 missions
-  'world-3': 6,
-  'world-4': 10,
-  'world-5': 14,
-  'world-6': 18,
-  'world-7': 22,
+  'world-1': 0,    // Always unlocked
+  'world-2': 3,    // Complete most of world-1
+  'world-3': 5,    // Complete world-1 + start world-2
+  'world-4': 7,    // Complete world-1 + world-2 (4+3=7)
+  'world-5': 9,    // Complete through world-3 (4+3+2=9)
+  'world-6': 11,   // Complete through world-4 (4+3+2+2=11)
+  'world-7': 13,   // Complete through world-5 (4+3+2+2+2=13)
 };

@@ -37,9 +37,9 @@ export default function MissionScreen({ state, onComplete, onBack }: Props) {
   const currentQ = questions[questionIndex];
   const isCorrect = selected === currentQ?.correctAnswer;
 
-  // TTS
-  const speak = (text: string) => {
-    if (!state.settings.soundEnabled) return;
+  // TTS — always active for listening skill questions; respects soundEnabled for others
+  const speak = (text: string, forcePlay = false) => {
+    if (!forcePlay && !state.settings.soundEnabled) return;
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
@@ -133,7 +133,7 @@ export default function MissionScreen({ state, onComplete, onBack }: Props) {
             </div>
             <p className={styles.exampleExp}>{q?.explanation}</p>
             {q?.skill === 'listening' && (
-              <button className={styles.listenBtn} onClick={() => speak(q.text)} aria-label="Listen to question">
+              <button className={styles.listenBtn} onClick={() => speak(q.text, true)} aria-label="Listen to question">
                 🎧 Listen
               </button>
             )}
@@ -180,7 +180,7 @@ export default function MissionScreen({ state, onComplete, onBack }: Props) {
       {/* Question */}
       <div className={styles.questionArea}>
         {currentQ.skill === 'listening' && (
-          <button className={styles.listenBtn} onClick={() => speak(currentQ.text)} aria-label="Listen to this question">
+          <button className={styles.listenBtn} onClick={() => speak(currentQ.text, true)} aria-label="Listen to this question">
             🎧 Listen to question
           </button>
         )}
